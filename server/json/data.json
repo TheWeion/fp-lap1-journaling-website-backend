@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "post": "random text",
+    "gif": "gif"
+  },
+  {
+    "id": 2,
+    "post": "random text",
+    "gif": "gif"
+  },
+  {
+    "id": 3,
+    "post": "hello from birmingnham",
+    "gif": "something random"
+  },
+  {
+    "id": 4,
+    "post": "Great coffee at costa",
+    "gif": "happy gif"
+  },
+  {
+    "id": 5,
+    "post": "Great coffee Coventry",
+    "gif": "happy gif"
+  }
+]
