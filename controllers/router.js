@@ -3,8 +3,8 @@ const router = express.Router();
 
 const Post = require('../models/post');
 
-router.get('/status/', (req, res) => {
-    const postData = Post.all;
+router.get('/status', (req, res) => {
+    const postData = Post.allPosts;
     res.send(postData);
 });
 
