@@ -10,21 +10,6 @@ class Post {
 
     static get all() {
         //read from the json
-        fs.readFile('./server/json/data.json', 'utf8', (err, jsonString) => {
-            if(err) {
-                console.log('File read failed:', err);
-                return err;
-            } 
-            try {
-                const comment = JSON.parse(jsonString);
-                console.log("All comments are here:", comment);
-                return comment;
-        
-            } catch (err) {
-                console.log("Error parsing JSON string:", err);
-                return err;
-            }
-        });
     }
     static get allPosts(){
         // Read a string from another file synchronously
@@ -52,8 +37,8 @@ class Post {
 
         fs.writeFile('./server/json/data.json', post, (err) => {
             if (err) throw err;
-            console.log('Data written to file');
         });
+        return newPost;
     }
 }
 

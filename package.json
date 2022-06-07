@@ -4,8 +4,9 @@
   "description": "> This community driven website allows coffee lovers across London to post and comment about the best beverage in a coders arsenal - Java.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./server/index.js"
+    "test": "jest --silent --watchAll",
+    "dev": "nodemon ./server/index.js",
+    "coverage": "jest --coverage --silent"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "jest": "^28.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
   }
 }
