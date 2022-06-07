@@ -6,7 +6,7 @@ const json = require('../json/data.json')
 
 describe('Test fs read function', () => {
     test('returns a type of object', () => {
-        expect (typeof post.getAll()).toBe('object');
+        expect (typeof post.allPosts).toBe('object');
     })
 });
 
@@ -20,7 +20,7 @@ describe('Test data in JSON file', () => {
 
     test('Comment is a string', () => {
         for(let i=0; i<json.length; i++){ 
-            expect(typeof json[i].comment).toBe('string');
+            expect(typeof json[i].post).toBe('string');
         }
     })
 
