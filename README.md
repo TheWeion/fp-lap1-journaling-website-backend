@@ -18,7 +18,17 @@
 * Run `npm test` to run test suite.
 
 ## Changelog
-
+* On the server side:
+    *  In the ./models/post 
+        * Create class Post with constructor
+        * Add getAll() function to the Post to read all data in json file 
+    * In the controllers/router
+        * Install router
+    * Install jest - run `npm install --save-dev jest`
+    * Install supertest - run `npm install supertest --save-dev`
+* Testing:
+    * Install jest - run `npm install --save-dev jest`
+    * Add coverage to the scripts to make sure over 60% of code is tested - "coverage": "jest --coverage --silent"
 
 ## Bugs
 
