@@ -40,6 +40,31 @@ class Post {
         });
         return newPost;
     }
+
+    static async addComment(id, comment) {
+        let comments = [];
+        const allPosts = this.allPosts;
+        allPosts.forEach(post => {
+            if(id === post.id) {
+                 if(post.hasOwnProperty("comments")) {
+                    post.comments.push(comment)
+                    console.log("if");
+                } else {
+                    comments.push(comment);
+                    post.comments = comments;
+                    console.log("else")
+                }
+            }   
+        });
+
+         //writing the posts with the new comments to json
+         const newComment = JSON.stringify(allPosts, null, 2);
+
+         fs.writeFile('./server/json/data.json', newComment, (err) => {
+             if (err) throw err;
+         });       
+
+    }
 }
 
 module.exports = Post;

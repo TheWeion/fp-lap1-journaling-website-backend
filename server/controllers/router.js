@@ -11,4 +11,11 @@ router.post('/', (req, res) => {
     res.status(201).send(newPost);
 });
 
+router.post('/status/:id', (req,res) => {
+    const id = parseInt(req.params.id);
+    const comment = req.body.comment;
+    const newComment = Post.addComment(id, comment);
+    res.status(200).send('Comment added to the JSON file');
+})
+
 module.exports = router;

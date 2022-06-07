@@ -7,21 +7,44 @@
   {
     "id": 2,
     "post": "random text",
-    "gif": "gif"
+    "gif": "gif",
+    "comments": [
+      "comment 1"
+    ]
   },
   {
     "id": 3,
     "post": "hello from birmingnham",
-    "gif": "something random"
+    "gif": "something random",
+    "comments": [
+      "jkfrkjfbk"
+    ]
   },
   {
     "id": 4,
     "post": "Great coffee at costa",
-    "gif": "happy gif"
+    "gif": "happy gif",
+    "comments": [
+      "value3",
+      "value4",
+      "value4",
+      "value5"
+    ]
   },
   {
     "id": 5,
     "post": "Great coffee Coventry",
-    "gif": "happy gif"
+    "gif": "happy gif",
+    "comments": [
+      "value5"
+    ]
+  },
+  {
+    "id": 6,
+    "post": "text",
+    "gif": "url",
+    "comments": [
+      "first comment"
+    ]
   }
 ]
