@@ -17,7 +17,7 @@ class Post {
         try {
             content = fs.readFileSync('./server/json/data.json', { encoding: 'utf8' });
             const posts = JSON.parse(content);
-            console.log("All posts are here:", posts);
+            //console.log("All posts are here:", posts);
             return posts;
         } catch(err) {
         // An error occurred
@@ -39,6 +39,41 @@ class Post {
             if (err) throw err;
         });
         return newPost;
+    }
+
+    static addComment(id, comment) {
+        let comments = [];
+        const allPosts = this.allPosts;
+        allPosts.forEach(post => {
+            if(id === post.id) {
+                 if(post.hasOwnProperty("comments")) {
+                    post.comments.push(comment)
+                    console.log("if");
+                } else {
+                    comments.push(comment);
+                    post.comments = comments;
+                    console.log("else")
+                }
+            }   
+        });
+
+         //writing the posts with the new comments to json
+         const newComment = JSON.stringify(allPosts, null, 2);
+
+         fs.writeFile('./server/json/data.json', newComment, (err) => {
+             if (err) throw err;
+         });       
+    }
+
+    static postById(id) {
+        const allPosts = this.allPosts;
+        const post = allPosts.filter(post => post.id === id);
+        if(post.length !== 0) {
+            return post;
+        } else {
+            return 'Post not found'
+        }
+
     }
 }
 
