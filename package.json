@@ -4,6 +4,7 @@
   "description": "> This community driven website allows coffee lovers across London to post and comment about the best beverage in a coders arsenal - Java.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",  
     "test": "jest --silent --watchAll",
     "dev": "nodemon ./server/index.js",
     "coverage": "jest --coverage --silent"
