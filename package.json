@@ -1,0 +1,31 @@
+{
+  "name": "fp-lap1-journaling-website-backend",
+  "version": "1.0.0",
+  "description": "> This community driven website allows coffee lovers across London to post and comment about the best beverage in a coders arsenal - Java.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --silent --watchAll",
+    "dev": "nodemon ./server/index.js",
+    "coverage": "jest --coverage --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theweion/fp-lap1-journaling-website-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theweion/fp-lap1-journaling-website-backend/issues"
+  },
+  "homepage": "https://github.com/theweion/fp-lap1-journaling-website-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
+  }
+}
