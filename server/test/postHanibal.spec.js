@@ -19,8 +19,11 @@ describe('Post model test', () => {
 
         expect(posts).toEqual(postsData);
     })
-    it('it should make an instance of a post', async () => {
+    it('it should write new post', async () => {
         //Somehow need to test the post method
         jest.mock('../models/post');
+        
+        const newPost = Post.addPost(testData);
+        expect(newPost.id).toEqual(postsData.length+1);
     })
 })
