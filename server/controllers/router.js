@@ -18,4 +18,14 @@ router.post('/status/:id', (req,res) => {
     res.status(200).send('Comment added to the JSON file');
 })
 
+router.get('/status/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const post = Post.postById(id);
+    if(typeof post === 'object'){
+        res.status(200).send(post);
+    } else {
+        res.status(404).send(post);
+}
+})
+
 module.exports = router;
