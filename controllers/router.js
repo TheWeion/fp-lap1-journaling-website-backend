@@ -3,6 +3,11 @@ const router = express.Router();
 
 const Post = require('../models/post');
 
+router.get('/', (req, res) => {
+    const postData = Post.all;
+    res.send(postData);
+});
+
 router.post('/', (req, res) => {
     //const data = {"post": "hello world"};
     //console.log(req);
