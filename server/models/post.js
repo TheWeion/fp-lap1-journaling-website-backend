@@ -15,7 +15,7 @@ class Post {
         // Read a string from another file synchronously
         let content;
         try {
-            content = fs.readFileSync('./server/json/data.json', { encoding: 'utf8' });
+            content = fs.readFileSync('./json/data.json', { encoding: 'utf8' });
             const posts = JSON.parse(content);
             //console.log("All posts are here:", posts);
             return posts;
@@ -35,7 +35,7 @@ class Post {
         //writing the posts with the new posts to json
         const post = JSON.stringify(allPosts, null, 2);
 
-        fs.writeFile('./server/json/data.json', post, (err) => {
+        fs.writeFile('./json/data.json', post, (err) => {
             if (err) throw err;
         });
         return newPost;
@@ -60,7 +60,7 @@ class Post {
          //writing the posts with the new comments to json
          const newComment = JSON.stringify(allPosts, null, 2);
 
-         fs.writeFile('./server/json/data.json', newComment, (err) => {
+         fs.writeFile('./json/data.json', newComment, (err) => {
              if (err) throw err;
          });       
     }
