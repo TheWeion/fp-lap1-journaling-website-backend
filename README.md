@@ -18,23 +18,26 @@
 * Run `npm test` to run test suite.
 
 ## Changelog
-* On the server side:
-    *  In the ./models/post 
-        * Create class Post with constructor
-        * Add allPosts() function to the Post to read all data in json file 
-        * Add addPosts() mto wrote new posts to the JSON file
-        * 
-    * In the controllers/router
-        * Add two post functions: for post and comments
+*  In the ./models/post 
+     * Create class Post with constructor
+     * Add allPosts() function to the Post to read all data in json file 
+     * Add addPost() to write new posts to the JSON file
+     * Add addComment() to add new comments to the post as an array
+     * Add postById() to return post by Id
+     * Add addReactions() to read and write ractions to the posts
+    
+ * In the controllers/router
+    * Add two post functions: for post and comments
         
 * Testing:
     * Install jest - run `npm install --save-dev jest`
     * Install nodemon - run  `npm install -D nodemon`
     * Install supertest - run `npm install supertest --save-dev`
     * Add coverage to the scripts to make sure over 60% of code is tested - "coverage": "jest --coverage --silent"
+    * To check the coverage - run `npm run coverage`
 
 ## Bugs
-
+* No bugs discovered at the time of deployment 
 
 ## Wins & Challenges
 
