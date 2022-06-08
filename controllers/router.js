@@ -4,8 +4,8 @@ const router = express.Router();
 const Post = require('../models/post');
 
 router.get('/status', (req, res) => {
-    const postData = Post.allPosts;
-    res.send(postData);
+    const postData = Post.allPosts  ;
+    res.status(200).send(postData);
 });
 
 router.post('/', (req, res) => {
@@ -30,7 +30,19 @@ router.get('/status/:id', (req, res) => {
         res.status(200).send(post);
     } else {
         res.status(404).send(post);
-}
+    }
+})
+
+router.post('/status/reaction/:id/:reaction_type', (req, res) =>{
+    const id = parseInt(req.params.id);
+    const reaction_type = req.params.reaction_type;
+    const reaction = Post.addReaction(id, reaction_type);
+    if(typeof reaction === 'object'){
+        res.status(200).send(reaction);
+    } else {
+        res.status(404).send(reaction);
+    }
+    
 })
 
 module.exports = router;
