@@ -29,7 +29,8 @@ class Post {
         const allPosts = this.allPosts; //Get posts from json
         const newPostID = allPosts.length +1; // make new add for post
 
-        const newPost = { id: newPostID, ...data }; //add new add to post
+        const date = new Date().toLocaleString();
+        const newPost = { id: newPostID, date: date, reaction: [{thumb: 0}, {heart: 0}, {java: 0}], ...data }; //add new add to post
         allPosts.push(newPost); //add new post to all posts
 
         //writing the posts with the new posts to json
@@ -48,11 +49,9 @@ class Post {
             if(id === post.id) {
                  if(post.hasOwnProperty("comments")) {
                     post.comments.push(comment)
-                    console.log("if");
                 } else {
                     comments.push(comment);
                     post.comments = comments;
-                    console.log("else")
                 }
             }   
         });
@@ -63,6 +62,7 @@ class Post {
          fs.writeFile('./json/data.json', newComment, (err) => {
              if (err) throw err;
          });       
+         
     }
 
     static postById(id) {
@@ -75,6 +75,32 @@ class Post {
         }
 
     }
+
+    static addReaction(id, reaction_type) {
+        const allPosts = this.allPosts;
+        for(let i = 0; i < allPosts.length; i++) {
+            if(id === allPosts[i].id) {
+               allPosts[i].reaction[reaction_type] += 1;
+                for(let j = 0; j < allPosts[i].reaction.length; j++) {
+                    const reaction_keys =  Object.keys(allPosts[i].reaction[j]);
+                    if(reaction_keys[0] === reaction_type) {
+                        allPosts[i].reaction[j][reaction_type] +=1;
+
+                        // writing the posts with the new reaction to json
+                        const newReaction = JSON.stringify(allPosts, null, 2);
+
+                        fs.writeFile('./json/data.json', newReaction, (err) => {
+                            if (err) throw err;
+                        }); 
+                        return allPosts[i];
+                    }
+                }
+        
+            }
+        }  
+       return "Cannot add reaction / post does not exist"
+    }
+
 }
 
 module.exports = Post;
