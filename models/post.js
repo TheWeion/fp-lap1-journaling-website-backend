@@ -8,9 +8,6 @@ class Post {
         this.gif = data.gif;
     }
 
-    static get all() {
-        //read from the json
-    }
     static get allPosts(){
         // Read a string from another file synchronously
         let content;

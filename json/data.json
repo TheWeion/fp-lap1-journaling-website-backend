@@ -47,5 +47,10 @@
     "comments": [
       "first comment"
     ]
+  },
+  {
+    "id": 1,
+    "post": "This is a testing post",
+    "gif": "Some random gif"
   }
 ]
