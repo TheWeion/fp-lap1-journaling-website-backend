@@ -40,6 +40,22 @@ describe('API server', () => {
         .expect(200)
         .expect(post, done)
     })
+    it('responds with 404 when adding comment to non-existent post', (done) => {
+        const body = {
+            comment: "hello there"
+        }
+        request(api)
+        .post('/status/100')
+        .send(body)
+        .expect(404)
+        .expect('Post ID does not exist', done)
+    })
+    it('responds with 404 when adding reaction to non-existent post', (done) => {
+        request(api)
+        .post('/status/reaction/100/like')
+        .expect(404)
+        .expect('Cannot add reaction / post does not exist', done)
+    })
     // it('responds to post /dogs with status 201', async (done) => {
     //     request(api)
     //         .post('/')

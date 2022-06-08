@@ -20,7 +20,12 @@ router.post('/status/:id', (req,res) => {
     const id = parseInt(req.params.id);
     const comment = req.body.comment;
     const newComment = Post.addComment(id, comment);
-    res.status(200).send('Comment added to the JSON file');
+    if(newComment === "success"){
+        res.status(200).send('Comment added to the JSON file');
+    }else{
+        res.status(404).send("Post ID does not exist");
+    }
+
 })
 
 router.get('/status/:id', (req, res) => {

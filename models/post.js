@@ -43,6 +43,10 @@ class Post {
     static addComment(id, comment) {
         let comments = [];
         const allPosts = this.allPosts;
+        console.log(allPosts.length);
+        if(id > allPosts.length){
+            return "error"
+        }
         allPosts.forEach(post => {
             if(id === post.id) {
                  if(post.hasOwnProperty("comments")) {
@@ -59,7 +63,9 @@ class Post {
 
          fs.writeFile('./json/data.json', newComment, (err) => {
              if (err) throw err;
-         });       
+         });
+         
+         return "success"
          
     }
 
@@ -76,6 +82,7 @@ class Post {
 
     static addReaction(id, reaction_type) {
         const allPosts = this.allPosts;
+        const done = false;
         for(let i = 0; i < allPosts.length; i++) {
             if(id === allPosts[i].id) {
                allPosts[i].reaction[reaction_type] += 1;

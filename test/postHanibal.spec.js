@@ -27,25 +27,33 @@ describe('Post model test', () => {
         const post = Post.postById(20);
         expect(post).toBe('Post not found');
     })
-    describe('Mocking the post class', () => {
-        jest.mock('fs');
-        jest.mock('../models/post')
-        beforeEach(() => {
-            // Clear all instances and calls to constructor and all methods:
-            Post.addPost.mockClear();
-          });
-          it('We can check if the consumer called the class constructor', () => {
-            const post = new Post(testData);
-            expect(post).toHaveBeenCalledTimes(1);
-          });
-
-          it('it should write new post', async () => {
-            //Somehow need to test the post method
-            expect(jest.isMockFunction(Post.addPost(testData))).toBeTruthy();
-            Post.addPost(testData).mockReturnValue('test string');
-            require('./');
-            //const newPost = Post.addPost(testData);
-            //expect(newPost.id).toEqual(postsData.length+1);
-        })
+    it('Should return error when adding comment to post if post does not exist', () => {
+        const comment = Post.addComment(200);
+        expect(comment).toBe('error');
     })
+    it('Should return error when adding reactions to non-existent post', () => {
+        const reaction = Post.addReaction(200, 'thumb')
+        expect(reaction).toBe('Cannot add reaction / post does not exist');
+    })
+    // describe('Mocking the post class', () => {
+    //     jest.mock('fs');
+    //     jest.mock('../models/post')
+    //     beforeEach(() => {
+    //         // Clear all instances and calls to constructor and all methods:
+    //         Post.addPost.mockClear();
+    //       });
+    //       it('We can check if the consumer called the class constructor', () => {
+    //         const post = new Post(testData);
+    //         expect(post).toHaveBeenCalledTimes(1);
+    //       });
+
+    //       it('it should write new post', async () => {
+    //         //Somehow need to test the post method
+    //         expect(jest.isMockFunction(Post.addPost(testData))).toBeTruthy();
+    //         Post.addPost(testData).mockReturnValue('test string');
+    //         require('./');
+    //         //const newPost = Post.addPost(testData);
+    //         //expect(newPost.id).toEqual(postsData.length+1);
+    //     })
+    // })
 })
