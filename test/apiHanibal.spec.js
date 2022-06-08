@@ -1,6 +1,7 @@
 const request = require('supertest');
 // import server
 const server = require('../server');
+const Post = require('../models/post');
 
 describe('API server', () => {
     let api;
@@ -24,6 +25,21 @@ describe('API server', () => {
     it('responds to get / with status 200', (done) => {
         request(api).get('/').expect(200, done);
     });
+
+    it('responds with all posts', (done) => {
+        const posts = Post.allPosts;
+        request(api)
+        .get('/status')
+        .expect(200)
+        .expect(posts, done)
+    })
+    it('responds with post by id', (done) => {
+        const post = Post.postById(1);
+        request(api)
+        .get('/status/1')
+        .expect(200)
+        .expect(post, done)
+    })
     // it('responds to post /dogs with status 201', async (done) => {
     //     request(api)
     //         .post('/')
