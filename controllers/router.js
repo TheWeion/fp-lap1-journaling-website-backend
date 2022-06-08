@@ -5,7 +5,7 @@ const Post = require('../models/post');
 
 router.get('/status', (req, res) => {
     const postData = Post.allPosts  ;
-    res.send(postData);
+    res.status(200).send(postData);
 });
 
 router.post('/', (req, res) => {
