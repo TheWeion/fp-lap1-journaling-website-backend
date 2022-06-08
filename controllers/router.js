@@ -4,7 +4,7 @@ const router = express.Router();
 const Post = require('../models/post');
 
 router.get('/status', (req, res) => {
-    const postData = Post.allPosts  ;
+    const postData = Post.allPosts;
     res.status(200).send(postData);
 });
 
