@@ -17,13 +17,14 @@ class Post {
         try {
             content = fs.readFileSync('./json/data.json', { encoding: 'utf8' });
             const posts = JSON.parse(content);
-            //console.log("All posts are here:", posts);
+           // console.log("All posts are here:", posts);
             return posts;
         } catch(err) {
         // An error occurred
         console.error(err);
         }
     }
+
     static addPost(data){
         //write post details to json
         const allPosts = this.allPosts; //Get posts from json
