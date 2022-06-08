@@ -29,7 +29,8 @@ class Post {
         const allPosts = this.allPosts; //Get posts from json
         const newPostID = allPosts.length +1; // make new add for post
 
-        const newPost = { id: newPostID, ...data }; //add new add to post
+        const date = new Date().toLocaleString();
+        const newPost = { id: newPostID, date: date, ...data }; //add new add to post
         allPosts.push(newPost); //add new post to all posts
 
         //writing the posts with the new posts to json
@@ -48,11 +49,9 @@ class Post {
             if(id === post.id) {
                  if(post.hasOwnProperty("comments")) {
                     post.comments.push(comment)
-                    console.log("if");
                 } else {
                     comments.push(comment);
                     post.comments = comments;
-                    console.log("else")
                 }
             }   
         });

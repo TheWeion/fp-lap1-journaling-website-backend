@@ -47,5 +47,11 @@
     "comments": [
       "first comment"
     ]
+  },
+  {
+    "id": 7,
+    "date": "6/8/2022, 10:48:28",
+    "post": "comment 1",
+    "gif": "url"
   }
 ]
