@@ -13,9 +13,9 @@
 * Other required dependencies
     * `npm install express`
     * `npm install cors`
+    * `npm install -D nodemon`
     * `npm install -D jest`
     * `npm install -D supertest`
-    * `npm install -D nodemon`
 
 ### Usage
 
