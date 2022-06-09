@@ -1,8 +1,8 @@
 const Post = require('../models/post');
 const fs = require('fs');
+const { response } = require('../server');
 describe('Post model test', () => {
     const testData = {
-        id: 1,
         post: 'This is a testing post',
         gif: 'Some random gif'
     }
@@ -56,4 +56,54 @@ describe('Post model test', () => {
     //         //expect(newPost.id).toEqual(postsData.length+1);
     //     })
     // })
+    
+    describe('Mocking testing fs', () => {
+        jest.mock('fs');
+        it('Should add new post and return it', () => {
+            //const response = {data: testData};
+            //jest.spyOn(fs, 'writeFile').mockImplementation(() => Promise.resolve(response));
+
+            jest.spyOn(fs, 'writeFile').mockImplementation();
+            const result = Post.addPost(testData);
+            expect(fs.writeFile).toHaveBeenCalled();
+            expect(typeof result).toEqual('object');
+
+            expect(result.id).toEqual(12);
+            
+        })
+        it('Should add new comment to a post and return it', () => {
+            jest.spyOn(fs, 'writeFile').mockImplementation();
+            const result = Post.addComment(1, 'testing comments');
+            expect(fs.writeFile).toHaveBeenCalled();
+            expect(typeof result).toEqual('string');
+            expect(result).toBe('success');
+        })
+        it('Should comment array in the specified post if it doesn\'t exist', () => {
+            jest.spyOn(fs, 'writeFile').mockImplementation();
+            const result = Post.addComment(10, 'testing comments');
+            expect(fs.writeFile).toHaveBeenCalled();
+            expect(typeof result).toEqual('string');
+            expect(result).toBe('success');
+        })
+        it('should return an error when adding a comment to non-existent post id', () => {
+            jest.spyOn(fs, 'writeFile').mockImplementation();
+            const result = Post.addComment(100, 'testing comments');
+            expect(fs.writeFile).toHaveBeenCalled();
+            expect(typeof result).toEqual('string');
+            expect(result).toBe('error');
+        })
+        it('Should increment the specified reaction to the post id', () => {
+            jest.spyOn(fs, 'writeFile').mockImplementation();
+            const result = Post.addReaction(9, 'thumb');
+            expect(fs.writeFile).toHaveBeenCalled();
+            expect(typeof result).toEqual('object');
+        })
+        it('Should return error message when adding reaction to non-existent post', () => {
+            jest.spyOn(fs, 'writeFile').mockImplementation();
+            const result = Post.addReaction(300, 'thumb');
+            expect(fs.writeFile).toHaveBeenCalled();
+            expect(typeof result).toEqual('string');
+            expect(result).toEqual('Cannot add reaction / post does not exist');
+        })
+    })
 })
