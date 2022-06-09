@@ -128,5 +128,39 @@
     ],
     "post": "doing it again",
     "gif": "url"
+  },
+  {
+    "id": 12,
+    "date": "09/06/2022, 14:29:13",
+    "reaction": [
+      {
+        "thumb": 0
+      },
+      {
+        "heart": 0
+      },
+      {
+        "java": 0
+      }
+    ],
+    "post": "adding post from client",
+    "gif": "https://media4.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif"
+  },
+  {
+    "id": 13,
+    "date": "09/06/2022, 15:02:39",
+    "reaction": [
+      {
+        "thumb": 0
+      },
+      {
+        "heart": 0
+      },
+      {
+        "java": 0
+      }
+    ],
+    "post": "another call from client",
+    "gif": "https://media0.giphy.com/media/13CoXDiaCcCoyk/giphy.gif"
   }
 ]

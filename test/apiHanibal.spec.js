@@ -2,6 +2,8 @@ const request = require('supertest');
 // import server
 const server = require('../server');
 const Post = require('../models/post');
+const fs = require('fs');
+
 
 describe('API server', () => {
     let api;
@@ -40,6 +42,12 @@ describe('API server', () => {
         .expect(200)
         .expect(post, done)
     })
+    it('responds 404 when requesting a non-existent post', (done) => {
+        request(api)
+        .get('/status/100')
+        .expect(404)
+        .expect('Post not found', done)
+    })
     it('responds with 404 when adding comment to non-existent post', (done) => {
         const body = {
             comment: "hello there"
@@ -64,4 +72,35 @@ describe('API server', () => {
     //         .expect(201)
     //         .expect({id: 2, ...testData}, done);
     // })
+    describe('Mock fs', () => {
+        jest.mock('fs');
+        it("Should add post and return it", (done) => {
+            const body = {
+                post: "testing post - ignore",
+                gif: "some gif url"
+            }
+            jest.spyOn(fs, 'writeFile').mockImplementation();
+            request(api)
+            .post('/')
+            .send(body)
+            .expect(201, done)
+            
+        })
+        it("Should add comment to post id", (done) => {
+            const body = {
+                comment: "testing comment - ignore",
+            }
+            jest.spyOn(fs, 'writeFile').mockImplementation();
+            request(api)
+            .post('/status/1')
+            .send(body)
+            .expect(200, done)
+            
+        })
+        it('responds with 200 when adding reaction to existent post', (done) => {
+            request(api)
+            .post('/status/reaction/9/thumb')
+            .expect(200, done)
+        })
+    })
 })

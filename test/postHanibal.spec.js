@@ -68,7 +68,7 @@ describe('Post model test', () => {
             expect(fs.writeFile).toHaveBeenCalled();
             expect(typeof result).toEqual('object');
 
-            expect(result.id).toEqual(12);
+            expect(typeof result.id).toEqual('number');
             
         })
         it('Should add new comment to a post and return it', () => {
@@ -105,5 +105,6 @@ describe('Post model test', () => {
             expect(typeof result).toEqual('string');
             expect(result).toEqual('Cannot add reaction / post does not exist');
         })
+        
     })
 })
