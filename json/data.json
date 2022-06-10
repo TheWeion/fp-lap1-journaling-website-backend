@@ -7,65 +7,54 @@
       "heart": 2,
       "java": 15
     },
-    "post": "Giffy",
-    "gif": "https://media4.giphy.com/media/xUOxeSXjqTCTzkq40w/giphy.gif",
+    "post": "There is a very good coffee shop for a take-away coffee in Borough Market. It's called Monmouth Coffee. I had a filter coffee (that day it was Malacara A from El Salvador) that was really delicate yet flavorful.",
+    "gif": "https://media2.giphy.com/media/G3Eoq3rxJQlR0AFdKu/giphy.gif?cid=dae2913bvligm6pmtdn1kfgkt8a9lkwnx453rxgqedyh34lf&rid=giphy.gif&ct=g",
     "comments": [
-      "value3",
-      "value4",
-      "value4",
-      "value5",
-      "testing comments adding"
+      "That's right! This is some of the best coffee I have had in my life. They are known for their filter coffee but the espresso is so bright and flavorful--and I typically prefer pour over/filter."
     ]
   },
   {
     "id": 2,
     "date": "09/06/2022, 11:02:06",
     "reaction": {
-      "thumb": 10,
-      "heart": 1,
-      "java": 15
+      "thumb": 5,
+      "heart": 4,
+      "java": 7
     },
-    "post": "Giffy",
-    "gif": "https://media4.giphy.com/media/xUOxeSXjqTCTzkq40w/giphy.gif",
+    "post": "Omotesando Koffee - This is a really fashionable chic Japanese coffee shop, very simplistic and design with bar style seating and a chic atmosphere. They have a variety of coffee including filter coffee, iced versions and also matcha matte both hot and iced. ",
+    "gif": "https://media3.giphy.com/media/pzryvxGeykOxeC0fWb/giphy.gif?cid=dae2913bvligm6pmtdn1kfgkt8a9lkwnx453rxgqedyh34lf&rid=giphy.gif&ct=g",
     "comments": [
-      "value3",
-      "value4",
-      "value4",
-      "value5"
+      "Finding an Omotesando in the middle of London was a true and incredible surprise. London has so many third-wave coffee shops now that good espresso drinks are not difficult to find, but I was happy to trudge the extra two blocks to start my morning here. It's minimalist, purpose-driven design creates an element of zen to start the day."
     ]
   },
   {
     "id": 3,
     "date": "09/06/2022, 11:02:06",
     "reaction": {
-      "thumb": 10,
+      "thumb": 4,
       "heart": 1,
-      "java": 15
+      "java": 6
     },
-    "post": "Giffy",
-    "gif": "https://media4.giphy.com/media/xUOxeSXjqTCTzkq40w/giphy.gif",
+    "post": "Kaffeine - This is one of my go-to coffee shops especially when I am meeting with a client. The employees are nice and the shop itself is spacious!",
+    "gif": "https://media0.giphy.com/media/hPTZgtzfRIB5Nfb5rL/giphy.gif?cid=dae2913bvligm6pmtdn1kfgkt8a9lkwnx453rxgqedyh34lf&rid=giphy.gif&ct=g",
     "comments": [
-      "value3",
-      "value4",
-      "value4",
-      "value5"
+      "Love this place! My favorite is the hot white mocha. I love their whipped cream so I always ask for extra. The only downside is that the coffee is more on the expensive side (that was only for me).",
+      "We got an awesome Airbnb near this coffee shop so we went there every day before we hit the road to explore the new city. Lattes and little sweet treats are awesome here. In fact, stopping by here is how we started our days when we were exploring this new exciting international city."
+
     ]
   },
   {
     "id": 4,
     "date": "09/06/2022, 11:02:06",
     "reaction": {
-      "thumb": 10,
+      "thumb": 9,
       "heart": 1,
-      "java": 15
+      "java": 5
     },
-    "post": "Giffy",
-    "gif": "https://media4.giphy.com/media/xUOxeSXjqTCTzkq40w/giphy.gif",
+    "post": " The Borough Barista - Small corner coffee shop that makes a mean latte, mocha, and gluten free breakfast bar.  Stayed at a nearby hotel for a week on business and visited this sweet little place every chance I got.  Service was always prompt and friendly.",
+    "gif": "https://media0.giphy.com/media/Y2jqxdgfQfnIEdc7kj/giphy.gif?cid=dae2913bvligm6pmtdn1kfgkt8a9lkwnx453rxgqedyh34lf&rid=giphy.gif&ct=g",
     "comments": [
-      "value3",
-      "value4",
-      "value4",
-      "value5"
+      "Cute little cafe in Marble Arch area--the staff is extremely friendly and they really know how to craft a good coffee!"
     ]
   },
   {
@@ -76,47 +65,10 @@
       "heart": 1,
       "java": 15
     },
-    "post": "Giffy",
-    "gif": "https://media4.giphy.com/media/xUOxeSXjqTCTzkq40w/giphy.gif",
+    "post": "Flat White - Good espresso with friendly and professional staff! Space was clean and cozy. Not a ton of seating but in the middle of the day it was mainly people having coffee, not food and seats turned over quickly. ",
+    "gif": "https://media4.giphy.com/media/IdmZ0ECRI5OzJZwEpT/giphy.gif?cid=dae2913bvligm6pmtdn1kfgkt8a9lkwnx453rxgqedyh34lf&rid=giphy.gif&ct=g",
     "comments": [
-      "value3",
-      "value4",
-      "value4",
-      "value5"
-    ]
-  },
-  {
-    "id": 6,
-    "date": "09/06/2022, 11:02:06",
-    "reaction": {
-      "thumb": 10,
-      "heart": 1,
-      "java": 15
-    },
-    "post": "Giffy",
-    "gif": "https://media4.giphy.com/media/xUOxeSXjqTCTzkq40w/giphy.gif",
-    "comments": [
-      "value3",
-      "value4",
-      "value4",
-      "value5"
-    ]
-  },
-  {
-    "id": 7,
-    "date": "09/06/2022, 11:02:06",
-    "reaction": {
-      "thumb": 10,
-      "heart": 1,
-      "java": 15
-    },
-    "post": "Giffy",
-    "gif": "https://media4.giphy.com/media/xUOxeSXjqTCTzkq40w/giphy.gif",
-    "comments": [
-      "value3",
-      "value4",
-      "value4",
-      "value5"
+      "Cute dog friendly cafe with friendly waiters!"
     ]
   }
 ]
