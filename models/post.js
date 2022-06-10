@@ -31,7 +31,7 @@ class Post {
         const newPostID = allPosts.length +1; // make new add for post
 
         const date = new Date().toLocaleString();
-        const newPost = { id: newPostID, date: date, reaction: [{thumb: 0}, {heart: 0}, {java: 0}], ...data }; //add new add to post
+        const newPost = { id: newPostID, date: date, reaction: {thumb: 0, heart: 0, java: 0}, ...data }; //add new add to post
         allPosts.push(newPost); //add new post to all posts
 
         //writing the posts with the new posts to json
