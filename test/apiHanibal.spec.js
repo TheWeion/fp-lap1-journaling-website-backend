@@ -99,7 +99,7 @@ describe('API server', () => {
         })
         it('responds with 200 when adding reaction to existent post', (done) => {
             request(api)
-            .post('/status/reaction/9/thumb')
+            .post('/status/reaction/1/thumb')
             .expect(200, done)
         })
     })
