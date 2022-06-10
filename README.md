@@ -9,13 +9,19 @@
 ### Installation
 
 * Clone or download the repo.
-* Then navigate to the `server` folder.
 * Run `npm install` to install dependencies.
+* Other required dependencies
+    * `npm install express`
+    * `npm install cors`
+    * `npm install -D nodemon`
+    * `npm install -D jest`
+    * `npm install -D supertest`
 
 ### Usage
 
-* Run `npm start` to start server.
-* Run `npm test` to run test suite.
+* Run `npm run dev` to start server.
+* Run `npm run test` to run test suite.
+* Run `npm run coverage` to see test coverage
 
 ## Changelog
 *  In the ./models/post 
