@@ -80,7 +80,7 @@ describe('Post model test', () => {
         })
         it('Should comment array in the specified post if it doesn\'t exist', () => {
             jest.spyOn(fs, 'writeFile').mockImplementation();
-            const result = Post.addComment(10, 'testing comments');
+            const result = Post.addComment(1, 'testing comments');
             expect(fs.writeFile).toHaveBeenCalled();
             expect(typeof result).toEqual('string');
             expect(result).toBe('success');
@@ -94,7 +94,7 @@ describe('Post model test', () => {
         })
         it('Should increment the specified reaction to the post id', () => {
             jest.spyOn(fs, 'writeFile').mockImplementation();
-            const result = Post.addReaction(9, 'thumb');
+            const result = Post.addReaction(1, 'thumb');
             expect(fs.writeFile).toHaveBeenCalled();
             expect(typeof result).toEqual('object');
         })
