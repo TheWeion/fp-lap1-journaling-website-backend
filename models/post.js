@@ -8,9 +8,6 @@ class Post {
         this.gif = data.gif;
     }
 
-    static get all() {
-        //read from the json
-    }
     static get allPosts(){
         // Read a string from another file synchronously
         let content;
@@ -31,7 +28,7 @@ class Post {
         const newPostID = allPosts.length +1; // make new add for post
 
         const date = new Date().toLocaleString();
-        const newPost = { id: newPostID, date: date, reaction: [{thumb: 0}, {heart: 0}, {java: 0}], ...data }; //add new add to post
+        const newPost = { id: newPostID, date: date, reaction: {thumb: 0, heart: 0, java: 0}, ...data }; //add new add to post
         allPosts.push(newPost); //add new post to all posts
 
         //writing the posts with the new posts to json
@@ -46,6 +43,10 @@ class Post {
     static addComment(id, comment) {
         let comments = [];
         const allPosts = this.allPosts;
+        console.log(allPosts.length);
+        if(id > allPosts.length){
+            return "error"  
+        }
         allPosts.forEach(post => {
             if(id === post.id) {
                  if(post.hasOwnProperty("comments")) {
@@ -62,7 +63,9 @@ class Post {
 
          fs.writeFile('./json/data.json', newComment, (err) => {
              if (err) throw err;
-         });       
+         });
+         
+         return "success"
          
     }
 
@@ -79,27 +82,28 @@ class Post {
 
     static addReaction(id, reaction_type) {
         const allPosts = this.allPosts;
+        const done = false;
+        if(id > allPosts.length){
+            return "Cannot add reaction / post does not exist"  
+        }
         for(let i = 0; i < allPosts.length; i++) {
             if(id === allPosts[i].id) {
-               allPosts[i].reaction[reaction_type] += 1;
-                for(let j = 0; j < allPosts[i].reaction.length; j++) {
-                    const reaction_keys =  Object.keys(allPosts[i].reaction[j]);
-                    if(reaction_keys[0] === reaction_type) {
-                        allPosts[i].reaction[j][reaction_type] +=1;
+                if(reaction_type in allPosts[i].reaction){
+                    allPosts[i].reaction[reaction_type] += 1;
+                    // writing the posts with the new reaction to json
+                    const newReaction = JSON.stringify(allPosts, null, 2);
 
-                        // writing the posts with the new reaction to json
-                        const newReaction = JSON.stringify(allPosts, null, 2);
-
-                        fs.writeFile('./json/data.json', newReaction, (err) => {
-                            if (err) throw err;
-                        }); 
-                        return allPosts[i];
-                    }
+                    fs.writeFile('./json/data.json', newReaction, (err) => {
+                        if (err) throw err;
+                    });
+                    return allPosts[i];
+                }else {
+                    return 'Unable to add reaction - This reaction does not exist in our coffee shop'
                 }
         
             }
         }  
-       return "Cannot add reaction / post does not exist"
+       
     }
 
 }
